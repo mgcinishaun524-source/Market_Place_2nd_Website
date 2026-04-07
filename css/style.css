@@ -1,3 +1,16 @@
+/* Prevent horizontal overflow on the entire site */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure all elements calculate their width correctly */
+* {
+    box-sizing: border-box;
+}
+
 :root {
     --dark-blue: #02033b;
     --brand-blue: #4438df;

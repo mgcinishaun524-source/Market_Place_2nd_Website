@@ -988,3 +988,39 @@ body {
         border-radius: 50px; /* Returns to full pills when stacked */
     }
 }
+/* --- Features Section Card Adjustments --- */
+.features-card {
+    background: #ffffff;
+    border-radius: 40px;
+    
+    /* 1. Reduce the width */
+    max-width: 900px; /* Reduced from 1200px to make it slimmer */
+    margin: 0 auto;
+    
+    /* 2. Increase the height via padding and min-height */
+    padding: 120px 80px; /* Increased top/bottom padding for more height */
+    min-height: 800px;   /* Explicitly sets a taller minimum height */
+    
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center; /* Ensures content stays vertically centered if height grows */
+}
+
+.features-grid {
+    display: grid;
+    /* Changed to 2 columns to accommodate the narrower card width */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 80px 40px;
+    width: 100%;
+}
+
+/* Responsive: Stack to 1 column earlier since the card is now narrower */
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    .features-card {
+        padding: 60px 30px;
+        min-height: auto; /* Allow it to grow naturally on mobile */
+    }
+}

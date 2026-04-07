@@ -1,0 +1,977 @@
+:root {
+    --dark-blue: #02033b;
+    --brand-blue: #4438df;
+    --text-color: #02033b;
+    --bg-light: #f4f8fb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fff;
+     margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    width: 100%;
+    padding: 20px 0;
+    background-color: var(--bg-light); /* Matching the very light blue tint in your image */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.logo span {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--dark-blue);
+    letter-spacing: -1px;
+}
+
+/* Nav Links Styling */
+.nav-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 18px;
+    transition: opacity 0.2s;
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+/* Dropdown Arrow */
+.arrow {
+    display: inline-block;
+    width: 0; 
+    height: 0; 
+    margin-left: 5px;
+    vertical-align: middle;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid var(--dark-blue);
+}
+
+/* Sign In Button */
+.btn-signin {
+    background-color: var(--brand-blue);
+    color: white;
+    padding: 12px 35px;
+    border-radius: 50px; /* Pill shape */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.btn-signin:hover {
+    background-color: #3529c5;
+    transform: translateY(-1px);
+}
+
+/* Mobile Responsive */
+.mobile-menu-icon {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.mobile-menu-icon span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--dark-blue);
+}
+
+@media (max-width: 900px) {
+    .nav-links, .btn-signin {
+        display: none; /* Add JS logic to show/hide for mobile */
+    }
+    .mobile-menu-icon {
+        display: flex;
+    }
+}
+/* Hero Section Styling */
+/* --- Hero Section Layout --- */
+.hero-section {
+    width: 100%;
+    padding: 80px 0;
+    background-color: #f9faff; /* Light background to match hero.jpg */
+    overflow: hidden;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    align-items: center; /* Vertically centers text and image */
+    justify-content: space-between; /* Pushes text left and image right */
+}
+
+/* --- Left Column Styling --- */
+.hero-content {
+    flex: 1; /* Takes up 50% of the space */
+    max-width: 550px;
+}
+
+.hero-content h1 {
+    font-size: 56px;
+    font-weight: 800;
+    color: #02033b;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    color: #4a4b65;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+/* --- Right Column Styling --- */
+.hero-image {
+    padding: 0;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Ensures image sticks to the right edge */
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+}
+/* --- Responsive Layout --- */
+@media (max-width: 992px) {
+    .hero-container {
+        flex-direction: column; /* Stacks image below text on mobile */
+        text-align: center;
+    }
+
+    .hero-image {
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+}
+.btn-primary {
+    background-color: #FFC145; /* Matches the yellow in the logo/image */
+    color: #02033b;
+    padding: 16px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #eeb137;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #02033b;
+    padding: 14px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    border: 2px solid #02033b;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: #02033b;
+    color: #fff;
+}
+
+/* Responsive: Stack content on smaller screens */
+@media (max-width: 900px) {
+    .hero-section {
+        background-position: 80% center; /* Adjusts image position for tablets */
+        padding: 60px 0;
+    }
+    
+    .hero-content h1 {
+        font-size: 40px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+.social-proof-section {
+    background-color: #feba4f; /* The specific golden-yellow from the image */
+    padding: 80px 0 40px 0;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden; /* Clips the partial cards */
+    width: 100%;
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.headline {
+    font-size: 42px;
+    font-weight: 800;
+    color: #02033b;
+    max-width: 500px;
+    line-height: 1.1;
+    margin-bottom: 60px;
+}
+
+.testimonial-row {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    margin-bottom: 80px;
+    width: 160%; /* Force width larger than screen to create the overlap effect */
+    margin-left: -30%; /* Centers the middle cards */
+}
+
+.card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 40px; /* Highly rounded corners */
+    min-width: 350px;
+    max-width: 350px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.stars {
+    color: #feba4f;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.card p {
+    font-size: 15px;
+    color: #02033b;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.author {
+    font-weight: 800;
+    margin-top: auto;
+}
+
+/* Logic for partial card appearance */
+.card-partial-left, .card-partial-right {
+    opacity: 0.9;
+}
+
+/* Featured Bar */
+.featured-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+    border-top: 1px solid rgba(2, 3, 59, 0.1);
+    padding-top: 40px;
+}
+
+.featured-text {
+    font-weight: 800;
+    color: #02033b;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+.logo-grid {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-grid img {
+    height: 35px;
+    filter: brightness(0) saturate(100%) invert(8%) sepia(57%) saturate(4908%) hue-rotate(235deg) brightness(92%) contrast(112%); /* Forces logos to Navy Blue */
+}
+/* --- Mission Section Styling --- */
+.mission-section {
+    padding: 100px 0;
+    background-color: #ffffff;
+}
+
+.mission-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr; /* Text is slightly wider than image */
+    align-items: center;
+    gap: 80px;
+}
+
+.mission-text h2 {
+    font-size: 48px;
+    font-weight: 800;
+    color: #02033b;
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+
+.mission-text p {
+    font-size: 20px;
+    color: #4a4b65;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.mission-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start; /* Keeps buttons left-aligned */
+}
+
+/* Specific styling for the outline button in this section */
+.btn-outline {
+    background-color: transparent;
+    color: #02033b;
+    padding: 14px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    border: 2px solid #02033b;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.btn-outline:hover {
+    background-color: #02033b;
+    color: #ffffff;
+}
+
+/* --- Image and Border Effect --- */
+.mission-visual {
+    position: relative;
+}
+
+.image-border-box {
+    position: relative;
+    display: inline-block;
+}
+
+/* This creates the yellow offset border behind the image */
+.image-border-box::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    right: -20px;
+    bottom: -20px;
+    left: 20px;
+    border: 4px solid #FFC145;
+    z-index: 1; /* Sits behind the image */
+}
+
+.image-border-box img {
+    position: relative;
+    z-index: 2; /* Sits on top of the border */
+    display: block;
+    width: 100%;
+    border-radius: 4px; /* Slight rounding on image corners */
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .mission-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 60px;
+    }
+
+    .mission-actions {
+        align-items: center;
+    }
+
+    .mission-text h2 {
+        font-size: 36px;
+    }
+    
+    .image-border-box::after {
+        display: none; /* Hide decorative border on mobile for cleaner look */
+    }
+}
+/* --- Features Section Styling --- */
+.features-section {
+    padding: 100px 0;
+    background-color: #f4f8fb; /* Light blue tint from the image */
+}
+
+.features-container {
+    max-width: 1200px; /* Outer container width */
+    margin: 0 auto;
+    padding: 0 40px;
+    text-align: center;
+}
+
+.section-headline {
+    font-size: 36px;
+    font-weight: 800;
+    color: #02033b;
+    line-height: 1.2;
+    margin-bottom: 80px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- Compact & Tall Card Styling --- */
+.features-card.compact-tall {
+    background-color: #ffffff;
+    padding: 80px 60px;
+    border-radius: 40px; /* Highly rounded corners from the image */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Subtle shadow for depth */
+    
+    /* Logic for dimensions and grid */
+    max-width: 750px; /* This reduces the width of the card */
+    margin: 0 auto; /* Keeps the card centered on the screen */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 equal columns makes it taller */
+    gap: 60px; /* Wide spacing */
+    align-items: flex-start;
+}
+
+.feature-item {
+    text-align: center;
+    /* Extra padding ensures text doesn't hit edges as card narrows */
+    padding: 0 15px; 
+}
+
+.feature-icon {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.feature-item h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #02033b;
+    margin-bottom: 15px;
+}
+
+.feature-item p {
+    font-size: 14px;
+    color: #4a4b65;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .features-card.compact-tall {
+        grid-template-columns: 1fr; /* Stacks to 1 column on mobile */
+        padding: 40px 20px;
+        gap: 30px;
+    }
+}
+/* --- Story and Help Section Styling --- */
+.story-help-section {
+    padding: 120px 0; /* Increased vertical padding for more white space */
+    background-color: #ffffff;
+}
+
+.story-help-container {
+    max-width: 1100px; 
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Gives the card more room than the text */
+    align-items: center;
+    /* This creates the massive gap between the two elements */
+    gap: 150px; 
+}
+
+/* --- Yellow Story Card (Left) --- */
+.story-card {
+    background-color: #ffbd4a;
+    padding: 80px 60px; /* More internal padding for a "bigger" feel */
+    border-radius: 60px;
+    color: #02033b;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+/* --- Help Center Content (Right) --- */
+.help-center-wrapper {
+    /* Ensuring the text stays left-aligned within its own column */
+    display: flex;
+    justify-content: flex-start;
+}
+
+.help-center-content {
+    max-width: 350px; /* Keeps the text from stretching too wide */
+}
+
+.story-card h2, 
+.help-center-content h2 {
+    font-size: 36px; /* Slightly larger headers */
+    font-weight: 800;
+    margin-bottom: 24px;
+    color: #02033b;
+}
+
+.story-card p, 
+.help-center-content p {
+    font-size: 19px;
+    line-height: 1.6;
+    margin-bottom: 45px;
+    color: #02033b;
+}
+
+/* --- Buttons --- */
+.btn-blue-pill {
+    display: inline-block;
+    background-color: #4438df;
+    color: #ffffff;
+    padding: 16px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.btn-outline-pill {
+    display: inline-block;
+    background-color: transparent;
+    color: #02033b;
+    padding: 14px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    border: 2px solid #02033b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1000px) {
+    .story-help-container {
+        gap: 80px; /* Shrink gap for tablets */
+    }
+}
+
+@media (max-width: 850px) {
+    .story-help-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 60px;
+    }
+    .help-center-wrapper {
+        justify-content: center;
+    }
+}
+/* --- Urgency CTA Section Styling --- */
+.urgency-cta-section {
+    width: 100%;
+    padding: 120px 0; /* Creates plenty of white space */
+    text-align: center;
+    /* This background handles the specific blue gradient from the image */
+    background: linear-gradient(135deg, #4d3ef7 0%, #4438df 100%); 
+}
+
+.cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.cta-headline {
+    font-size: 56px;
+    font-weight: 800;
+    color: #ffffff; /* White text on blue */
+    line-height: 1.1;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+}
+
+.cta-subtitle {
+    font-size: 24px;
+    color: #feba4f; /* Yellow text for subtitle */
+    margin-bottom: 60px;
+    font-weight: 600;
+}
+
+/* --- Button Styling --- */
+.cta-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Specific styling for the outline button in this section */
+.btn-outline-white {
+    background-color: transparent;
+    color: #ffffff; /* White text for outline button */
+    padding: 16px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    border: 2px solid #ffffff; /* White border */
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.btn-outline-white:hover {
+    background-color: #ffffff;
+    color: #4438df; /* Indigo text on hover */
+}
+
+/* Primary yellow button styles (reusing previous class if already defined) */
+.btn-primary {
+    display: inline-block;
+    background-color: #FFC145; /* Matches the vibrant yellow in branding */
+    color: #02033b; /* Dark navy text */
+    padding: 16px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #feba4f;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .cta-headline {
+        font-size: 40px;
+    }
+    
+    .cta-actions {
+        flex-direction: column; /* Stack buttons vertically on small screens */
+        align-items: center;
+    }
+}
+/* --- Insights Section Styling --- */
+.insights-section {
+    width: 100%;
+    background-color: #feba4f; /* Matches the vibrant yellow in image */
+    padding: 100px 0;
+    color: #02033b; /* Navy text */
+}
+
+.insights-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 40px;
+}
+
+.section-title {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.1;
+    text-align: center;
+    margin-bottom: 80px;
+    letter-spacing: -1px;
+}
+
+/* --- The 3-Column Grid --- */
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+/* --- Individual Insight Card --- */
+.insight-card {
+    background-color: #ffffff;
+    /* Special border radius matching image */
+    border-top-left-radius: 60px; /* Highly rounded top corners */
+    border-top-right-radius: 60px;
+    border-bottom-left-radius: 60px; /* Heavily rounded bottom white area */
+    border-bottom-right-radius: 60px;
+    
+    overflow: hidden; /* Clips the visual element */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Subtle shadow for depth */
+    display: flex;
+    flex-direction: column; /* Stacks visual above content */
+}
+
+.card-visual {
+    position: relative;
+    height: 200px; /* Specific height for images */
+}
+
+.card-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures images fill the area nicely */
+}
+
+/* --- Category Tag (Pill style) --- */
+.category-tag {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    background-color: #ffffff; /* White tag matches background for contrast */
+    color: #02033b;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+/* --- Content Area (White) --- */
+.card-content {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.card-content h3 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+    color: #02033b;
+}
+
+.card-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #4a4b65; /* Slightly lighter navy for description text */
+    margin-bottom: 0;
+}
+
+/* --- View All Button --- */
+.view-all-wrapper {
+    text-align: center;
+}
+
+/* --- Responsive adjustments --- */
+@media (max-width: 900px) {
+    .section-title {
+        font-size: 40px;
+    }
+    
+    .insights-grid {
+        grid-template-columns: 1fr; /* 1 column on smaller screens */
+        gap: 20px;
+    }
+}
+/* --- Footer Styling --- */
+.main-footer {
+    background-color: #02033b; /* Deep navy background */
+    color: #ffffff;
+    padding: 100px 0 40px 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 1.5fr; /* 3 column layout */
+    gap: 60px;
+}
+
+/* --- Left Column --- */
+.footer-logo-text {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.social-links img {
+    width: 24px;
+    filter: invert(1); /* Makes black icons white */
+}
+
+.legal-links {
+    margin-bottom: 25px;
+}
+
+.legal-links a {
+    color: #ffffff;
+    text-decoration: underline;
+    font-size: 14px;
+    margin-right: 20px;
+}
+
+.copyright, .attribution {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.attribution a {
+    color: inherit;
+}
+
+/* --- Navigation Column --- */
+.nav-title {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 15px;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-nav li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+/* The yellow dash before links */
+.footer-nav li::before {
+    content: "";
+    width: 15px;
+    height: 2px;
+    background-color: #feba4f;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.footer-nav a {
+    color: #feba4f; /* Yellow links */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+/* --- Newsletter Column --- */
+.newsletter-card {
+    background-color: #feba4f; /* Signature yellow */
+    padding: 45px;
+    border-radius: 40px; /* Rounded corners match branding */
+    color: #02033b;
+}
+
+.newsletter-card h3 {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.newsletter-card p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+/* --- Newsletter Form Container --- */
+.newsletter-form {
+    display: flex; /* Aligns input and button side-by-side */
+    width: 100%;
+    max-width: 400px; /* Adjust based on your layout preference */
+    margin-top: 20px;
+}
+
+/* --- The Input Field --- */
+.newsletter-form input {
+    flex-grow: 1; /* Takes up remaining space */
+    padding: 15px 25px;
+    border: none;
+    background-color: #ffffff;
+    font-size: 16px;
+    /* Rounds only the left side */
+    border-radius: 50px 0 0 50px; 
+    outline: none;
+}
+
+/* --- The Attached Submit Button --- */
+.footer-submit-btn {
+    background-color: #02033b; /* Deep navy from footer styling */
+    color: #ffffff;
+    border: none;
+    padding: 15px 35px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    /* Rounds only the right side */
+    border-radius: 0 50px 50px 0; 
+    transition: background 0.3s ease;
+}
+
+.footer-submit-btn:hover {
+    background-color: #1a1b4d; /* Slightly lighter on hover */
+}
+
+/* Responsive: Stacks on very small screens if necessary */
+@media (max-width: 480px) {
+    .newsletter-form {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .newsletter-form input, 
+    .footer-submit-btn {
+        border-radius: 50px; /* Returns to full pills when stacked */
+    }
+}
